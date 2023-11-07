@@ -18,4 +18,35 @@ document.addEventListener("DOMContentLoaded", () => {
   //  Hello, Sup, Hi because fetch is async and will take longer when the api
 
 
+//Question 2
+// When fetchData is executed what will be console logged?
+function fetchData(){
+  let data = fetch('https://randomuser.me/api/')
+    .then( res => res.json() )
+    .then( res => res)
+
+  console.log(data)
+}
+
+fetchData()
+// answer -- the promise is logged
+// What will be console logged when the following code is run? Why?
+function fetchData(){
+  let data = fetch('https://randomuser.me/api/')
+    .then( res => res.json() )
+    .then( json => console.log(json) )
+}
+
+fetchData()
+
+// What will be console logged when the following code is run? Why?
+function fetchData(){
+  let data = fetch('https://randomuser.me/api/')
+    .then( res => res.json() )
+    .then( console.log )
+}
+
+fetchData()
+// NOTHING
+
 });
